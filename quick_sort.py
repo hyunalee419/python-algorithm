@@ -8,25 +8,26 @@
 '''
 def quick_sort(arr):
     m = len(arr)
-    if m <= 1: return
-    
+    if m <= 1: return arr
+
     # divide & conquer
-    pivot = arr[m//2]
+    pivot = arr[0]
     L = []
+    M = []
     R = []
     for n in arr:
-        if n <= pivot:
+        if n < pivot:
             L.append(n)
+        elif n == pivot:
+            M.append(n)
         else:
             R.append(n)
-    quick_sort(L)
-    quick_sort(R)
     
     # merge
-    arr = L + R
+    return quick_sort(L) + M + quick_sort(R)
     
 if __name__ == '__main__':
-    arr = [4, 2, 3,5 ,1 2, 5, 2, 12]
+    arr = [4, 2, 3, 5 ,1, 2, 5, 2, 12]
     print(arr)
-    quick_sort(arr)
+    arr = quick_sort(arr)
     print(arr)
