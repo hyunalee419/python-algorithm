@@ -15,3 +15,34 @@ heap sort는 최대 힙 또는 최소 힙을 만족하며 정렬하는 방식. �
 3. 1,2방식을 반복한다. (대신, 이때 부터는 root 노드와 swap한 마지막 index를 제외하고 정렬한다.)
 O(NlogN): 정렬하는데 트리구조 이기때문에 logN * heapify 방식을 만드는데 N = N * logN = O(NlogN)
 '''
+def heapify(arr):
+    length_arr = len(arr)
+    if length_arr <= 1:
+        return
+    
+    last_idx = length_arr - 1
+    if last_idx % 2 == 1:
+        parent_idx = (last_idx - 1)//2
+        if arr[parent_idx] < arr[last_idx]:
+            arr[parent_idx], arr[last_idx] = arr[last_idx], arr[parent_idx]
+        last_idx -= 1
+
+    for i in range(last_idx, 0, -2):
+        max_idx = i
+        if arr[max_idx] < arr[i - 1]:
+            max_idx = i - 1
+            
+        parent_idx = (i - 2)//2
+        if arr[parent_idx] < arr[max_idx]:
+            arr[parent_idx], arr[max_idx] = arr[max_idx], arr[parent_idx] 
+
+def heap_sort(arr):
+    for i in range(len(arr), 0, -1):
+        heapify(arr[:i])
+        arr[0], arr[i] = arr[i], arr[0]
+    
+if __name__ == '__name__':
+    arr = [1, 5, 2, 4, 23, 15, 1, 8, 9, 10]
+    print(arr)
+    heap_sort(arr)
+    print(arr)
