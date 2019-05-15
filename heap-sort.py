@@ -18,7 +18,7 @@ O(NlogN): 정렬하는데 트리구조 이기때문에 logN * heapify 방식을 
 def heapify(arr):
     length_arr = len(arr)
     if length_arr <= 1:
-        return
+        return arr
     
     last_idx = length_arr - 1
     if last_idx % 2 == 1:
@@ -35,14 +35,20 @@ def heapify(arr):
         parent_idx = (i - 2)//2
         if arr[parent_idx] < arr[max_idx]:
             arr[parent_idx], arr[max_idx] = arr[max_idx], arr[parent_idx] 
+    return arr
 
 def heap_sort(arr):
-    for i in range(len(arr), 0, -1):
-        heapify(arr[:i])
-        arr[0], arr[i] = arr[i], arr[0]
-    
-if __name__ == '__name__':
+    length_arr = len(arr)
+    arr_max_heap = arr
+    for i in range(length_arr, 1, -1):
+        arr_max_heap = heapify(arr_max_heap[:i])
+        arr[i - 1] = arr_max_heap[0]
+        arr_max_heap[0], arr_max_heap[i - 1] = arr_max_heap[i - 1], arr_max_heap[0]
+
+    return arr
+
+if __name__ == '__main__':
     arr = [1, 5, 2, 4, 23, 15, 1, 8, 9, 10]
     print(arr)
-    heap_sort(arr)
+    arr = heap_sort(arr)
     print(arr)
