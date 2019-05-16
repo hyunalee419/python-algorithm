@@ -13,8 +13,15 @@ def radix_sort(arr):
     for i in range(digit)[::-1]:
         arr_digit = [[] for i in range(10)]
         for num in arr:
-            d = int(str(num)[i])
-            arr_digit[d].append(num)
+            try:
+                d = int(str(num)[i])
+            except:
+                diff = digit - len(str(num))
+                if i - diff >= 0:
+                    d = int(str(num)[i - diff])
+                else:
+                    d = 0
+            arr_digit[d].append(num)                
             
         # merge
         arr = []
