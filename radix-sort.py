@@ -14,8 +14,10 @@ def radix_sort(arr):
         arr_digit = [[] for i in range(10)]
         for num in arr:
             try:
+                # 일반적인 경우 (자리수가 같은 경우)
                 d = int(str(num)[i])
             except:
+                # 최대 자리수의 값보다 작은 자리수의 숫자 (리스트에 자리수가 다른 숫자가 있는 경우)
                 diff = digit - len(str(num))
                 if i - diff >= 0:
                     d = int(str(num)[i - diff])
