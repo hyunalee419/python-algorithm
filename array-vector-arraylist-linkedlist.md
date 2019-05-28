@@ -40,4 +40,4 @@ LinkedList는 메모리 상에 연속적으로 할당되지 않는다. 자료값
 
 
 *참조*
-- [Java의 LinkedList와 ArrayList에 대한 비교]ttps://www.holaxprogramming.com/2014/02/12/java-list-interface/)
+- [Java의 LinkedList와 ArrayList에 대한 비교](ttps://www.holaxprogramming.com/2014/02/12/java-list-interface/)
