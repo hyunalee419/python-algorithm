@@ -35,3 +35,9 @@ ArrayList는 메모리 상에 연속적으로 할당되지만 인덱스의 중�
 ## LinkedList
 LinkedList는 메모리 상에 연속적으로 할당되지 않는다. 자료값을 저장하기 위한 공간과 다음 자료으 주소를 저장하기 위한 공간이 필요하기때문에 공간복잡도가 높다.
 하지만, 자료의 변경이 많이 발생해도 자료 이동 및 복사 작업이 없이 다음 자료가 저장된 메모리의 주소값만 변경해주면 되어 용이하다.
+
+---
+
+
+*참조*
+- [Java의 LinkedList와 ArrayList에 대한 비교]ttps://www.holaxprogramming.com/2014/02/12/java-list-interface/)
