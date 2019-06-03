@@ -29,5 +29,22 @@ leaf: 트리의 가장 끝에 자식이 없는 노드
 자식노드가 완벽하게 두개를 다 갖고 있는 트리
 레벨의 개수를 n이라고 가정할 때 2^(n-1)의 노드를 가진 트리 
 
+# Binary Tree의 3가지 순회방법
+예제 트리:
+     (1)
+  (2)   (3)
+(4) (5)
+
+## Inorder
+Left - Root - Right: 4 - 2 - 5 - 1 - 3
+
+## Preorder
+Root - Left - Right: 1 - 2 - 4 - 5 - 3
+
+## Postorder
+Left - Right - Root: 4 - 5 - 2 - 3 - 1
+
 ---
-참조: [자료구조 알고리즘: Tree의 종류](https://www.youtube.com/watch?v=LnxEBW29DOw)
+**참조**
+- [자료구조 알고리즘: Tree의 종류](https://www.youtube.com/watch?v=LnxEBW29DOw)
+- [Binary Tree의 3가지 순회방법](https://www.youtube.com/watch?v=QN1rZYX6QaA)
